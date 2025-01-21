@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	  <!-- 
+		<textarea> 태그
+			의미:  <textarea>는 사용자가 여러 줄의 텍스트를 입력할 수 있는 입력 필드입니다.
+			
+			비유: <input type="text">가 작은 메모장이었다면, <textarea>는 큰 공책입니다.
+			
+			문법:  <textarea name="이름" rows="행수" cols="열수" placeholder="힌트 문구"></textarea>	  
+		       
+		       주요 속성 설명:
+						rows: 텍스트 상자의 세로 크기(행 수)를 설정합니다.
+						cols: 텍스트 상자의 가로 크기(열 수)를 설정합니다.
+						placeholder: 입력 칸에 힌트를 제공합니다.
+						name: 서버에 보낼 때 데이터의 이름입니다.
+		 -->
+		 <h1>textarea태그</h1>
+		 	
+		 <form>
+		 	<label>메세지:</label>
+		 	<textarea  name="message" rows="5" cols="30" placeholder="여기에 메세지를 입력하세요"></textarea> <br>		
+		 </form>
+ 		<!--
+ 			결론 
+ 			 - 입력 칸은 5줄 높이, 30글자 너비입니다.
+			 - 사용자가 메시지를 여러 줄에 걸쳐 작성할 수 있습니다.
+ 		 -->		 
+ 		 
+ 		 <hr>
+ 		 
+ 	<!-- 
+		<select> 태그
+			의미:  <select>는 **드롭다운 리스트(선택 박스)**를 만들어 사용자에게 여러 선택지 중 하나를 고르게 합니다.
+			비유: 음식점에서 메뉴를 보고 하나를 고르는 것처럼 작동합니다.
+ 			문법:
+ 					<select name="이름">
+					    <option value="값1">선택지1</option>
+					    <option value="값2">선택지2</option>
+					</select>
+		     주요 속성 설명:	name: 서버에 보낼 때 이 드롭다운의 이름을 지정합니다.
+						value (옵션의 속성): 선택된 옵션이 서버로 전송될 때의 값입니다.
+						multiple: 여러 개의 선택을 가능하게 합니다
+     -->		 
+ 	     <form>
+		    <label for="food">좋아하는 음식:</label>
+		    <select id="food" name="food" multiple="multiple">
+		        <option value="pizza">피자</option>
+		        <option value="burger">햄버거</option>
+		        <option value="sushi">스시</option>
+		    </select>
+		</form>
+    	<!--
+ 			결론 
+ 			 - 드롭다운 메뉴에서 "피자", "햄버거", "스시" 중 하나를 선택할 수 있습니다.
+ 		 -->
+	     
+	     <hr>		
+	     <!-- 
+	     <option> 태그
+				의미: <option>은 <select> 태그 안에서 사용되며, 선택지 하나하나를 정의합니다.
+				
+				비유: 드롭다운 리스트의 메뉴 항목 하나하나입니다.
+				
+				문법:
+						<option value="값1">옵션 텍스트</option>
+						<option value="값2" selected>옵션 텍스트2</option>
+				주요 속성:
+						value: 서버로 보낼 때 선택된 값.
+						selected: 기본적으로 선택된 옵션을 설정합니다.
+	      -->	     
+	     <select name="language">
+	     		<option value="korean">한국어</option>
+	     		<option value="english">영어</option>
+	     		<option value="japanese" selected>일본어</option>
+	     </select>
+	   	     <!--
+	 			결론 
+	 			 - 기본 선택은 "일본어"로 설정되어 있습니다.
+ 			 -->   
+ 		<hr>
+ 		 <!-- 
+ 		 <optgroup> 태그
+			의미: <optgroup>은 <option> 태그를 그룹으로 묶어, 선택지를 분류합니다.
+			비유: 음식 메뉴에서 "한식", "양식"처럼 분류를 나누는 역할입니다.
+ 		      문법:
+ 		      <optgroup label="그룹 이름">
+				    <option value="값1">선택지1</option>
+				    <option value="값2">선택지2</option>
+			  </optgroup>
+ 		      
+ 		      주요 속성:
+					label: 그룹의 이름을 설정합니다.
+ 		  --> 		
+ 		<form>
+ 			<label for="meal">선호하는 음식:</label>
+ 			<select id="meal" name="meal">
+ 				<optgroup label="한식">
+ 					<option value="bibimbap">비빔밥</option>
+ 					<option value="bulgogi">불고기</option>
+ 				</optgroup>
+ 				
+ 				<optgroup label="양식">
+ 					<option value="pasta">파스타</option>
+ 					<option value="steak">스테이크</option>
+ 				</optgroup>
+ 			</select>		
+ 		</form>
+ 		 <!--
+ 		 	결론
+ 				 드롭다운 메뉴에서 "한식"과 "양식"으로 나뉘어 선택지가 표시됩니다.
+ 		   --> 
+ 		 <hr>
+ 		 <!-- 
+ 		 <button> 태그
+				의미: <button>은 사용자가 클릭할 수 있는 버튼을 만듭니다.
+				비유: 엘리베이터 버튼처럼, 특정 작업을 실행하게 합니다.
+				문법:
+					<button type="타입">버튼 텍스트</button>
+				주요 속성:
+					type속성: 버튼의 동작을 설정합니다.
+						submit: 데이터를 서버로 전송.
+						reset: 폼 데이터를 초기화.
+						button: 기본 동작 없이 자바스크립트 등으로 동작 정의.				 
+ 		  -->		 
+ 		    <!-- /는 서버의 루트 경로를 가리킵니다. 
+			     /    ->  http://localhost:8090/     절대경로
+			-->
+ 		   <form action="/HTML5/main.jsp" method="GET">
+ 		   		
+ 		   		이름 : <input type="text" name="userName"> <br>
+ 		   		나이 : <input type="number" name="userAge"> <br>
+ 		   		
+ 		   		<button type="submit">main.jsp요청</button>
+ 		  		 <button type="reset">입력한값 다시 취소</button>
+ 		   </form>
+ 		  
+ 			 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
